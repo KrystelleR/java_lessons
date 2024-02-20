@@ -7,7 +7,7 @@ public class datatypes{
         byte  myByte = 4;
  	   long myLong = 24;
         short myShort = 7;
-        char myChar = 'A';
- 	   System.out.println(myFloat);
+        char myChar = 'A' + 1;
+ 	   System.out.println(myChar);
     }
 }
