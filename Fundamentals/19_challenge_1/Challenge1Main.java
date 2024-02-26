@@ -1,37 +1,32 @@
 public class Challenge1Main{
 	public static void main (String[] args){
-		//Calling prompter class
-		Prompter prompter = new Prompter();
-		
 		//Getting user's name and surname
-		String nameStr = prompter.prompt("What is your name:") + " " + prompter.prompt("What is your surname:");
+		String name = Prompter.prompt("What is your name:");
+		String surname = Prompter.prompt("What is your surname:");
 
 		//Getting users dob and calculating age
-		DateValidator dv = new DateValidator();
-		String dob = "";
+		//If users dob is invalid, user will be re-prompted until users dob is valid
+		String date_of_birth = "";
 		while(true){
-		 	dob = prompter.prompt("Enter your date of birth(DD/MM/YYYY):");
-			if(dv.isValid(dob)){
+		 	date_of_birth = Prompter.prompt("Enter your date of birth(DD/MM/YYYY):");
+			if(DateValidator.isValid(date_of_birth)){
 				break;
 			}
 		}
-		AgeCalculator ac = new AgeCalculator();
-		String age = String.valueOf(ac.calculate(dob));
+		String age = String.valueOf(AgeCalculator.calculate(date_of_birth));
 		
 		//Getting distance in km, calidating number and converting it in miles
-		NumberValidator nv = new NumberValidator();
-		String distance = "";
+		//If distance is invalid, user will be re-prompted until distance is valid
+		String distance_from_store = "";
 		while(true){
-			distance = prompter.prompt("How far is your favourite store from your home? (in km):");
-			if(nv.isValid(distance)){
+			distance_from_store = Prompter.prompt("How far is your favourite store from your home? (in km):");
+			if(NumberValidator.isValid(distance_from_store)){
 				break;
 			}
 		}
-		MilesCalculator mc = new MilesCalculator();
-		String distanceMiles = String.valueOf(mc.calculate(distance));
+		String distanceMiles = String.valueOf(MilesCalculator.calculate(distance_from_store));
 
 		//Prints out information back to user
-		Printer print = new Printer();
-		print.print(nameStr, age, distanceMiles);
+		Printer.print((name + " " + surname), age, distanceMiles);
 	}
 }
