@@ -3,12 +3,14 @@ public class IfTest6 {
         int a = 15;
        
         if(a > 0 ){
-            if(a <50){
-                System.out.println("COOL");
-            }
-        }
-        else if(a >-50){
             System.out.println("COOL");
+            
+        }
+        else if(a <0){
+            System.out.println("NOT COOL");
+        }
+        else{
+            System.out.println("a == 0");
         }
     }
 }

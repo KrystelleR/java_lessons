@@ -14,7 +14,7 @@ public static double calculate(String dobStr){
 
 		// Subtract current year from years born year for their age
         // Calculate accurate age using years and fraction of a year
-        //getDayOfYear() returns the day of the year i.e. 56th day out of 365.25 days within a year
+        //getDayOfYear() returns the day of the year i.e. 57th day out of 365.25 days within a year
         return currentDate.getYear() - birthDate.getYear() + (currentDate.getDayOfYear() - birthDate.getDayOfYear()) / 365.25;
 	}
 }
