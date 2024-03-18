@@ -1,7 +1,8 @@
 class NumberValidator{
+	// Method to check if input is a valid numerical value
 	public static boolean isValid (String value){
 		try{
-			int validValue = Integer.parseInt(value);
+			double validValue = Double.parseDouble(value);
 			return true;
 		}
 		catch (Exception e){
@@ -10,8 +11,9 @@ class NumberValidator{
 		}
 	}
 
+	// Method to check if input is a valid non-zero value for division or modulus
 	public static boolean isValidDivide (String value, String sign){
-		if(Integer.parseInt(value) == 0){
+		if(Double.parseDouble(value) == 0){
 			if(sign.equals("/") || sign.equals("%")){
 				System.out.println("Cannot divide by 0.");
 				return false;
