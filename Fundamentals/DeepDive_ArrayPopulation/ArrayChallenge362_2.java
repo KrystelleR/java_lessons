@@ -21,15 +21,14 @@ class ArrayChallenge362_2{
 
 	//method to populate even array
 	public static void populateEvenArray(int[] myArray){
-		Random r = new Random();
-		int randomValue;
+		int value = 0;
 		for(int i = 0; i< myArray.length; i++){
 			//do-while so that code repeats until a valid value is found
 			do
-			randomValue = r.nextInt(1000);
-			while((randomValue%2 ==0) == false);
+			value++;
+			while((value%2 ==0) == false);
 			
-			myArray[i] = randomValue;
+			myArray[i] = value;
 		}
 	}		
 

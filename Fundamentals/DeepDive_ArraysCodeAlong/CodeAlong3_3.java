@@ -13,6 +13,8 @@ class CodeAlong3_3{
 		System.out.println("\nColumn:");
 		validArray(getCol(3));
 
+		//seeing if cell is valid and printing it out
+		System.out.println("\nCell:");
 		getCell(5,5);
 	}
 
@@ -40,13 +42,33 @@ class CodeAlong3_3{
 	}
 
 	//method to see if cell is valid
-	public static void getCell(int row, int col){
+	public static int getCell(int row, int col){
+		boolean isValidRow = false;
+		boolean isValidCol = false;
 		if(row>=0 && row<=myArray.length){
+			isValidRow = true;
 			for(int i =0; i<myArray.length; i++){
 				if(col>=0 && col<=myArray[i].length){
-					System.out.println(myArray[row][col]);
+					isValidCol = true;
 				}
 			}
+		}
+
+		if(isValidRow && isValidCol){
+			System.out.println(myArray[row][col]);
+			return myArray[row][col];
+		}
+		else if(!isValidRow && isValidCol){
+			System.out.println("Invalid row.");
+			return 0;
+		}
+		else if(!isValidCol && isValidRow){
+			System.out.println("Invalid col.");
+			return 0;
+		}
+		else{
+			System.out.println("Invalid row and col.");
+			return 0;
 		}
 	}
 	

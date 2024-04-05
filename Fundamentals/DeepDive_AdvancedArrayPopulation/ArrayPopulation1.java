@@ -1,91 +1,54 @@
 public class ArrayPopulation1 {
-public static void main(String[]args){
-        int[] array = new int[10];
-        boolean[] booleanArray = new boolean[10];
-        byte[] byteArray = new byte[10];
-        char[] charArray = new char[10];
-        short[] shortArray = new short[10];
-        long[] longArray = new long[10];
-        float[] floatArray = new float[10];
-        double[] doubleArray = new double[10];
+    public static void main(String[] args) {
+        // Declarations
+        Integer[] array = new Integer[10];
+        Boolean[] booleanArray = new Boolean[10];
+        Byte[] byteArray = new Byte[10];
+        Character[] charArray = new Character[10];
+        Short[] shortArray = new Short[10];
+        Long[] longArray = new Long[10];
+        Float[] floatArray = new Float[10];
+        Double[] doubleArray = new Double[10];
         String[] stringArray = new String[10];
-        
-        printArray("array: ",array);
-        
-        int[] tempArray = new int[10];
-        int i =0;
-        for(boolean element : booleanArray){
-            tempArray[i] = element ? 1 : 0;
-            i++;
-        }
 
-        printArray("boolean array: ",tempArray);
-
-        i =0;
-        for(byte element : byteArray){
-            tempArray[i] = (int)element;
-            i++;
-        }
-
-        printArray("byte array: ",tempArray);
-
-        i =0;
-        for(char element : charArray){
-            tempArray[i] = (int)element;
-            i++;
-        }
-
-        printArray("char array: ",tempArray);
-
-        i =0;
-        for(short element : shortArray){
-            tempArray[i] = (int)element;
-            i++;
-        }
-        printArray("short array: ",tempArray);
-
-        i =0;
-        for(long element : longArray){
-            tempArray[i] = (int)element;
-            i++;
-        }
-        printArray("long array: ",tempArray);
-
-        i =0;
-        for(float element : floatArray){
-            tempArray[i] = (int)element;
-            i++;
-        }
-        printArray("float array: ",tempArray);
-
-        i =0;
-        for(double element : doubleArray){
-            tempArray[i] = (int)element;
-            i++;
-        }
-        printArray("double array: ",tempArray);
-
-        i =0;
-        for(String element : stringArray){
-            tempArray[i] = element==null?0:1;
-            i++;
-        }
-        printArray("string array: ",tempArray);
-
+        // Printing arrays
+        printArray("boolean array: ", convertToIntegerArray(booleanArray));
+        printArray("byte array: ", convertToIntegerArray(byteArray));
+        printArray("char array: ", convertToIntegerArray(charArray));
+        printArray("short array: ", convertToIntegerArray(shortArray));
+        printArray("long array: ", convertToIntegerArray(longArray));
+        printArray("float array: ", convertToIntegerArray(floatArray));
+        printArray("double array: ", convertToIntegerArray(doubleArray));
+        printArray("string array: ", convertToIntegerArray(stringArray));
     }
-    
+    private static int[] convertToIntegerArray(Object[] myArray) {
+        int[] tempArray = new int[myArray.length];
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] instanceof Number) {
+                tempArray[i] = ((Number) myArray[i]).intValue();
+            } else if (myArray[i] instanceof Boolean) {
+                tempArray[i] = ((Boolean) myArray[i]) ? 1 : 0;
+            } else if (myArray[i] instanceof Character) {
+                tempArray[i] = (int) ((Character) myArray[i]);
+            } else {
+                tempArray[i] = (myArray[i] != null) ? 1 : 0;
+            }
+        }
+        return tempArray;
+    }
+
+    //pretty print int array
     public static void printArray(String prefix,int[] arrayToPrint){
         System.out.print(prefix);
         System.out.print("[");
-    
+
         for (int i =0;i < arrayToPrint.length;i++) {
-            
+
             System.out.print(arrayToPrint[i]);
             if(i != arrayToPrint.length-1){
                 System.out.print(",");
-            }     
+            }
         }
         System.out.print("]\n");
     }
 }
-

@@ -124,11 +124,12 @@ class CodeAlong4_Menu{
 						validCol = false;
 					}
 				}
-				if(validCol)
+				if(validCol){
 					return col;
-			}
-			else{
+				}
+				else{
 				System.out.println("Invalid column.");
+				}
 			}
 		}
 	}
@@ -159,10 +160,15 @@ class CodeAlong4_Menu{
 									validCol = false;
 								}
 							}
-							if(validCol)
+
+							if(validCol){
 								cellArray[0] = row;
 								cellArray[1] = col;
 								return cellArray;
+							}
+							else{
+								System.out.println("Invalid column.");
+							}
 						}
 					}
 				}
