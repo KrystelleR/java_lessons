@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"DocExample","l":"DocExample()","url":"%3Cinit%3E()"},{"p":"<Unnamed>","c":"DocExample","l":"doConcat(String, int)","url":"doConcat(java.lang.String,int)"},{"p":"<Unnamed>","c":"DocExample","l":"getVar()"},{"p":"<Unnamed>","c":"DocExample","l":"var"}]
